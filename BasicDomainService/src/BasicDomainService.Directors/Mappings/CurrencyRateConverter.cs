@@ -33,7 +33,7 @@ namespace BasicDomainService.Directors.Mappings
                 rates.Add(model);
             }
 
-            return rates;
+            return rates.OrderBy(a => a.TargetIso);
         }
     }
 }

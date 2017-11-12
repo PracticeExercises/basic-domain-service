@@ -18,7 +18,8 @@ namespace BasicDomainService.Api.Controllers
         [Route("rates/{currencyNameIsoAlphabetic:alpha}")]
         public async Task<IHttpActionResult> GetRatesAsync(string currencyNameIsoAlphabetic)
         {
-            return Ok(await _currencyDirector.GetRateViewAsync(currencyNameIsoAlphabetic));
+            var models = await _currencyDirector.GetRateViewAsync(currencyNameIsoAlphabetic);
+            return models == null ? (IHttpActionResult) NotFound() : Ok(models);
         }
     }
 }

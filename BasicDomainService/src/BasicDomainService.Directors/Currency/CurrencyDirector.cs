@@ -22,7 +22,7 @@ namespace BasicDomainService.Directors.Currency
         public async Task<IEnumerable<CurrencyRateViewModel>> GetRateViewAsync(string currencyIsoName)
         {
             var rates = await _currencyService.GetRatesAsync(currencyIsoName);
-            return _mapper.Map<IEnumerable<CurrencyRateViewModel>>(rates).OrderBy(a => a.TargetIso);
+            return _mapper.Map<IEnumerable<CurrencyRateViewModel>>(rates);
         }
     }
 }
