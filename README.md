@@ -11,7 +11,7 @@ Your tasks:
 
 The test suite has to run on a **Windows environment**. The choice of tools is yours.
 
-The project uses https://fixer.io to pull currency rates.  
+The project uses http://fixer.io to pull currency rates.  
 The project uses https://swagger.io to present the endpoints.  
 The project is configured to use swagger at http://localhost:6500/swagger.  
 
