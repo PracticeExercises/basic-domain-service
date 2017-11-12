@@ -15,10 +15,10 @@ namespace BasicDomainService.Api.Controllers
             _currencyDirector = currencyDirector;
         }
 
-        [Route("rates")]
-        public async Task<IHttpActionResult> GetRatesAsync()
+        [Route("rates/{currencyNameIsoAlphabetic:alpha}")]
+        public async Task<IHttpActionResult> GetRatesAsync(string currencyNameIsoAlphabetic)
         {
-            return Ok(await _currencyDirector.GetRateViewAsync());
+            return Ok(await _currencyDirector.GetRateViewAsync(currencyNameIsoAlphabetic));
         }
     }
 }

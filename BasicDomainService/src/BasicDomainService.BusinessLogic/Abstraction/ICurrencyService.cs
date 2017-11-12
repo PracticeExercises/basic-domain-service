@@ -6,6 +6,6 @@ namespace BasicDomainService.BusinessLogic.Abstraction
 {
     public interface ICurrencyService
     {
-        Task<IEnumerable<CurrencyRateModel>> GetRatesAsync();
+        Task<IEnumerable<CurrencyRateModel>> GetRatesAsync(string currencyIsoName);
     }
 }

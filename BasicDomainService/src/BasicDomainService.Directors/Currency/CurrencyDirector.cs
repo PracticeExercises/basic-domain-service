@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using BasicDomainService.BusinessLogic.Abstraction;
 using BasicDomainService.Directors.Abstraction;
 using BasicDomainService.Directors.Models;
 
-namespace BasicDomainService.Directors.Time
+namespace BasicDomainService.Directors.Currency
 {
     public class CurrencyDirector : ICurrencyDirector
     {
@@ -18,10 +19,10 @@ namespace BasicDomainService.Directors.Time
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CurrencyRateViewModel>> GetRateViewAsync()
+        public async Task<IEnumerable<CurrencyRateViewModel>> GetRateViewAsync(string currencyIsoName)
         {
-            var rates = await _currencyService.GetRatesAsync();
-            return _mapper.Map<IEnumerable<CurrencyRateViewModel>>(rates);
+            var rates = await _currencyService.GetRatesAsync(currencyIsoName);
+            return _mapper.Map<IEnumerable<CurrencyRateViewModel>>(rates).OrderBy(a => a.TargetIso);
         }
     }
 }

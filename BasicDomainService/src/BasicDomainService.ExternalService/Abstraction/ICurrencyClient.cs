@@ -6,6 +6,6 @@ namespace BasicDomainService.ExternalService.Abstraction
 {
     public interface ICurrencyClient
     {
-        Task<CurrencyModel> GetCurrencyAsync(DateTime dateTimeSnapshot);
+        Task<CurrencyModel> GetCurrencyAsync(string currencyIsoName, DateTime dateTimeSnapshot);
     }
 }

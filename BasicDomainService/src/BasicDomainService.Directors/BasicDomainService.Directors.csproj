@@ -56,7 +56,7 @@
     <Compile Include="Models\CurrencyRateViewModel.cs" />
     <Compile Include="Models\TimeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Time\CurrencyDirector.cs" />
+    <Compile Include="Currency\CurrencyDirector.cs" />
     <Compile Include="Abstraction\ICurrencyDirector.cs" />
     <Compile Include="Abstraction\ITimeDirector.cs" />
     <Compile Include="Time\TimeDirector.cs" />

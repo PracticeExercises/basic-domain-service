@@ -15,9 +15,9 @@ namespace BasicDomainService.ExternalService.Clients
             _apiClient = apiClient;
         }
 
-        public Task<CurrencyModel> GetCurrencyAsync(DateTime dateTimeSnapshot)
+        public Task<CurrencyModel> GetCurrencyAsync(string currencyIsoName, DateTime dateTimeSnapshot)
         {
-            var endpoint = $"{dateTimeSnapshot:yyyy-MM-dd}";
+            var endpoint = $"{dateTimeSnapshot:yyyy-MM-dd}?base={currencyIsoName}";
             return _apiClient.GetModelAsync<CurrencyModel>(endpoint);
         }
     }

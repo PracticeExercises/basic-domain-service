@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using AutoMapper;
 using BasicDomainService.BusinessLogic.Models;
 using BasicDomainService.Directors.Models;
@@ -23,12 +24,15 @@ namespace BasicDomainService.Directors.Mappings
                 var model = new CurrencyRateViewModel
                 {
                     Base = rateModel.Base.ToString().ToUpperInvariant(),
+                    BaseIso = (short)rateModel.Base,
                     Target = rateModel.Target.ToString().ToUpperInvariant(),
+                    TargetIso = (short)rateModel.Target,
                     Rate = rateModel.Rate
                 };
 
                 rates.Add(model);
             }
+
             return rates;
         }
     }

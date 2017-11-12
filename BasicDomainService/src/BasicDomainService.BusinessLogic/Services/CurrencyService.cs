@@ -5,7 +5,6 @@ using BasicDomainService.BusinessLogic.Abstraction;
 using BasicDomainService.BusinessLogic.Models;
 using BasicDomainService.BusinessLogic.Time;
 using BasicDomainService.ExternalService.Abstraction;
-using BasicDomainService.ExternalService.Clients;
 
 namespace BasicDomainService.BusinessLogic.Services
 {
@@ -25,9 +24,9 @@ namespace BasicDomainService.BusinessLogic.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CurrencyRateModel>> GetRatesAsync()
+        public async Task<IEnumerable<CurrencyRateModel>> GetRatesAsync(string currencyIsoName)
         {
-            var model = await _currencyClient.GetCurrencyAsync(_time.Now);
+            var model = await _currencyClient.GetCurrencyAsync(currencyIsoName, _time.Now);
             return model != null ? _mapper.Map<IEnumerable<CurrencyRateModel>>(model) : null;
         }
     }

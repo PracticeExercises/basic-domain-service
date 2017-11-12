@@ -6,6 +6,6 @@ namespace BasicDomainService.Directors.Abstraction
 {
     public interface ICurrencyDirector
     {
-        Task<IEnumerable<CurrencyRateViewModel>> GetRateViewAsync();
+        Task<IEnumerable<CurrencyRateViewModel>> GetRateViewAsync(string currencyIsoName);
     }
 }

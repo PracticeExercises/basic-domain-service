@@ -2,16 +2,22 @@
 
 namespace BasicDomainService.Directors.Models
 {
-    [DataContract(Name = "currency")]
+    [DataContract(Name = "currencyRate")]
     public class CurrencyRateViewModel
     {
-        [DataMember(Name = "base")]
+        [DataMember(Name = "baseIsoAlphabetic")]
         public string Base { get; set; }
 
-        [DataMember(Name = "target")]
+        [DataMember(Name = "baseIsoDigital")]
+        public short BaseIso { get; set; }
+
+        [DataMember(Name = "targetIsoAlphabetic")]
         public string Target { get; set; }
 
-        [DataMember(Name = "rate")]
+        [DataMember(Name = "targetIsoDigital")]
+        public short TargetIso { get; set; }
+
+        [DataMember(Name = "exchangeRate")]
         public decimal Rate { get; set; }
     }
 }
