@@ -1,6 +1,4 @@
-﻿using System;
-using BasicDomainService.BusinessLogic.Abstraction;
-using BasicDomainService.BusinessLogic.Services;
+﻿using BasicDomainService.BusinessLogic.Abstraction;
 using BasicDomainService.Directors.Abstraction;
 using BasicDomainService.Directors.Models;
 

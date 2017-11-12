@@ -4,7 +4,6 @@ using BasicDomainService.Directors.Abstraction;
 namespace BasicDomainService.Api.Controllers
 {
     [RoutePrefix("api/time")]
-    // ReSharper disable once HollowTypeName
     public class TimeController : ApiController
     {
         private readonly ITimeDirector _timeDirector;
